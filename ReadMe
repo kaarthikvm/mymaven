@@ -76,3 +76,9 @@ going to pom and change it
 1) https://stackoverflow.com/questions/26135427/jenkins-build-issue-maven-home-doesnt-exist
 2) https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in
 
+
+
+Note:
+====
+Though "MyMavenReleaseRepo" and "MyMavenSnapshotRepo" has been created and configured in Jenknis, ONLY snapshot is created and uploaded
+in artifactory. Reason is there is NO GOAL set for release in POM.xml
