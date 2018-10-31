@@ -58,3 +58,19 @@ curl -u admin:====== http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:80
 java -jar consumerBanking-1.0-20181031.201739-3.jar
 
 Exepcted Output : Hello World
+
+
+
+
+
+
+
+
+
+
+
+Integrating Jenkins with Maven
+==============================
+1) https://stackoverflow.com/questions/26135427/jenkins-build-issue-maven-home-doesnt-exist
+2) https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in
+
