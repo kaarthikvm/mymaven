@@ -71,6 +71,8 @@ Exepcted Output : Hello World
 
 Integrating Jenkins with Maven
 ==============================
+Main advantage: Instead of saying deployment server information in pom.xml, we are trigering using Jenkins which is configurable unlike
+going to pom and change it
 1) https://stackoverflow.com/questions/26135427/jenkins-build-issue-maven-home-doesnt-exist
 2) https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in
 
