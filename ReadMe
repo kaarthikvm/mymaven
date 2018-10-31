@@ -1,0 +1,60 @@
+Process: 
+mvn clean build deploy 
+ --> Build the code, test the code
+ --> create executable JAR file (cp means class path)
+ ---> Uplaod JAR file to artifactory
+
+pom .xml
+     - contains build instructions to create an executable jar file 
+     (https://stackoverflow.com/questions/9689793/cant-execute-jar-file-no-main-manifest-attribute)
+     - To view JAR file contents
+      (jar tf a.tar)
+     - Upload to Maven artifactory present in AWS
+      (http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/webapp/#/artifacts/browse/tree/General/MyMavenRepo/com/companyname/bank/consumerBanking/1.0-SNAPSHOT/consumerBanking-1.0-20181031.201739-3.jar)
+      (https://www.jfrog.com/confluence/display/RTF/Maven+Repository#MavenRepository-ConfiguringAuthentication)
+     
+     To access Artifactory, in conf/settings.xml of maven folder, use the following credentials
+     ================
+     <servers>
+<server>
+<id>central</id>
+<username>admin</username>
+<password>==================</password>
+</server>
+<server>
+<id>snapshots</id>
+<username>admin</username>
+<password>====================</password>
+</server>
+</servers>
+<profiles>
+<profile>
+<repositories>
+<repository>
+<id>central</id>
+<snapshots>
+<enabled>false</enabled>
+</snapshots>
+<name>libs-release</name>
+<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url>
+</repository>
+<repository>
+<id>snapshots</id>
+<snapshots />
+<name>libs-snapshot</name>
+<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url>
+</repository>
+</repositories>
+</profile>
+</profiles>
+</settings>
+
+
+Reference : <servers> <server> <id>central</id> <username>admin</username> <password>kaarthik</password> </server> <server> <id>snapshots</id> <username>admin</username> <password>kaarthik</password> </server> </servers> <profiles> <profile> <repositories> <repository> <id>central</id> <snapshots> <enabled>false</enabled> </snapshots> <name>libs-release</name> <url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url> </repository> <repository> <id>snapshots</id> <snapshots /> <name>libs-snapshot</name> <url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url> </repository> </repositories> </profile> </profiles> </settings>
+
+
+3) To check the uploaded artifactory, download JAR file and execute it 
+curl -u admin:====== http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/MyMavenRepo/com/companyname/bank/consumerBanking/1.0-SNAPSHOT/consumerBanking-1.0-20181031.201739-3.jar > consumerBanking-1.0-20181031.201739-3.jar
+java -jar consumerBanking-1.0-20181031.201739-3.jar
+
+Exepcted Output : Hello World
