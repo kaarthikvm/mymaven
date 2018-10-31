@@ -1,5 +1,5 @@
 Process: 
-mvn clean build deploy 
+mvn clean  deploy 
  --> Build the code, test the code
  --> create executable JAR file (cp means class path)
  ---> Uplaod JAR file to artifactory
