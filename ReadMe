@@ -97,3 +97,7 @@ Create a file called "my_jfrog_start" and place is in "/etc/init.d" and issue "s
 
 nohup /home/ubuntu/myjfrog/artifactory-oss-6.5.2/bin/artifactory.sh & 2>&1
 =========================================================
+
+Refer following link on how to creatre SystemD for start and stop service. Best example for tomcat
+and can be applied to otehr also
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
