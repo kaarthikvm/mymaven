@@ -84,3 +84,16 @@ Note:
 ====
 Though "MyMavenReleaseRepo" and "MyMavenSnapshotRepo" has been created and configured in Jenknis, ONLY snapshot is created and uploaded
 in artifactory. Reason is there is NO GOAL set for release in POM.xml
+
+
+
+For autostart jfrog when VM starts
+==================================
+Make JFrog startup as service in /etc/init.d
+
+Create a file called "my_jfrog_start" and place is in "/etc/init.d" and issue "service my_jfrog_start" command
+================== File content ====================
+#!/bin/sh -e
+
+nohup /home/ubuntu/myjfrog/artifactory-oss-6.5.2/bin/artifactory.sh & 2>&1
+=========================================================
