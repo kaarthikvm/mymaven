@@ -36,13 +36,13 @@ pom .xml
 <enabled>false</enabled>
 </snapshots>
 <name>libs-release</name>
-<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url>
+<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/MyMavenRepo</url>
 </repository>
 <repository>
 <id>snapshots</id>
 <snapshots />
 <name>libs-snapshot</name>
-<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/libs-release</url>
+<url>http://ec2-18-224-200-57.us-east-2.compute.amazonaws.com:8081/artifactory/MyMavenRepo</url>
 </repository>
 </repositories>
 </profile>
@@ -62,7 +62,9 @@ Exepcted Output : Hello World
 
 
 
-
+Note: 
+Please create "MyMavenRepo" of "maven type" repository manually in JFROG. The same repo name has to be given
+in pom.xml (not required), settings.xml, Jenkins Job file
 
 
 
